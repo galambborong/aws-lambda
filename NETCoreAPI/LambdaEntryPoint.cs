@@ -39,9 +39,9 @@ namespace NETCoreAPI
             .ConfigureAppConfiguration((context, builder) =>
             {
                  if (!context.HostingEnvironment.IsDevelopment())
-                {
-                     builder.AddSystemsManager("/pluralsight");
-                }
+                 {
+                      builder.AddSystemsManager("/pluralsight");
+                 }
             })
                 .UseStartup<Startup>();
         }
