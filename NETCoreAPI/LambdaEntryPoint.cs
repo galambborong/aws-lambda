@@ -1,6 +1,3 @@
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -38,10 +35,10 @@ namespace NETCoreAPI
             builder
             .ConfigureAppConfiguration((context, builder) =>
             {
-                 if (!context.HostingEnvironment.IsDevelopment())
-                 {
-                      builder.AddSystemsManager("/pluralsight");
-                 }
+                if (!context.HostingEnvironment.IsDevelopment())
+                {
+                    builder.AddSystemsManager("/pluralsight");
+                }
             })
                 .UseStartup<Startup>();
         }

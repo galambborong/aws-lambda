@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NETCoreAPI.Controllers
 {
-  [Route("[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class AuthorsController : ControllerBase
     {
@@ -22,14 +22,14 @@ namespace NETCoreAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Author>>> GetAuthors()
         {
-            return await _context.Authors.Include(a=>a.Books).ToListAsync();
+            return await _context.Authors.Include(a => a.Books).ToListAsync();
         }
 
         // GET: api/Authors/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Author>> GetAuthor(int id)
         {
-            var author = await _context.Authors.Include(a => a.Books).FirstOrDefaultAsync(a=>a.AuthorId==id);
+            var author = await _context.Authors.Include(a => a.Books).FirstOrDefaultAsync(a => a.AuthorId == id);
 
             if (author == null)
             {
